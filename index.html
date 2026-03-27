@@ -15,15 +15,47 @@ body {
   scroll-behavior: smooth;
 }
 
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.4);
+  padding: 12px 20px;
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+}
+
+.navbar a {
+  color: white;
+  font-size: 14px;
+}
+
+/* CURSOR GLOW */
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,191,255,0.15) 0%, transparent 60%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
 .container {
   max-width: 1000px;
   margin: auto;
   padding: 40px 20px;
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
   font-size: 44px;
-  text-shadow: 0 0 20px rgba(0,191,255,0.7);
+  background: linear-gradient(90deg,#00bfff,#ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h2 {
@@ -48,6 +80,18 @@ p {
 .card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 15px 30px rgba(0,191,255,0.3);
+}
+
+/* IMAGE HOVER */
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
 
 a {
@@ -76,12 +120,12 @@ a {
 .fade {
   opacity: 0;
   transform: translateY(30px);
-  transition: 0.7s ease;
 }
 
 .fade.show {
   opacity: 1;
   transform: translateY(0);
+  transition: 0.7s ease;
 }
 
 .small {
@@ -99,6 +143,13 @@ a {
 </head>
 <body>
 
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<div class="navbar">
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
+
 <div class="container">
 
 <h1>Abhinav Tapaskar</h1>
@@ -113,25 +164,8 @@ a {
 
 <h2>About</h2>
 <p>
-Ambitious and self-driven student from Nanded, passionate about Artificial Intelligence, entrepreneurship, and engineering.  
-I build real-world solutions—from SaaS systems to AI-based applications—and focus on execution, learning, and continuous growth.
-</p>
-
-<div class="section-line"></div>
-
-<h2>Currently Building</h2>
-<p>
-• FaceGuard-AI2 → AI skincare assistant<br>
-• RestaurantOS-3 → SaaS for restaurant operations<br>
-• Exploring AI + SaaS scalable systems
-</p>
-
-<div class="section-line"></div>
-
-<h2>Education</h2>
-<p>
-Late Digambarraoji Devde Junior College — Class 12 (PCM, Result Awaited)<br>
-Priyadarshini Vidyasankul — Class 10 (72%)
+Ambitious and self-driven student passionate about AI, entrepreneurship, and engineering.  
+I build real-world solutions and focus on execution and growth.
 </p>
 
 <div class="section-line"></div>
@@ -141,109 +175,64 @@ Priyadarshini Vidyasankul — Class 10 (72%)
 <div class="card fade">
 <h3>FaceGuard-AI2 <span class="tag">Prototype</span></h3>
 
-<!-- ADD IMAGE HERE -->
-<!-- <img src="your-image-link" style="width:100%; border-radius:10px; margin-bottom:10px;"> -->
+<!-- ADD IMAGE -->
+<!-- <img src="your-image-link"> -->
 
-<p><b>Problem:</b> People lack personalized skincare guidance</p>
-<p><b>Solution:</b> AI-powered skincare assistant</p>
-<p><b>Tech:</b> Web App • AI Integration • Frontend Systems</p>
-<p><b>Impact:</b> Early-stage AI product solving real-world problem</p>
+<p><b>Problem:</b> Lack of personalized skincare guidance</p>
+<p><b>Solution:</b> AI-powered assistant</p>
+<p><b>Tech:</b> Web App • AI Integration</p>
+<p><b>Impact:</b> Real-world AI product</p>
 
 <a href="https://face-guard-ai-2.vercel.app/" target="_blank">View Project</a>
-<p class="small">Prototype stage • Demo available on request</p>
 </div>
 
 <div class="card fade">
 <h3>RestaurantOS-3</h3>
 
-<!-- ADD IMAGE HERE -->
-
-<p><b>Problem:</b> Restaurants lack simple digital management systems</p>
-<p><b>Solution:</b> SaaS platform to streamline operations</p>
-<p><b>Tech:</b> Web App • SaaS Architecture • Dashboard Systems</p>
-<p><b>Impact:</b> Built for scalable real-world usage</p>
+<p><b>Problem:</b> No simple restaurant management system</p>
+<p><b>Solution:</b> SaaS dashboard</p>
+<p><b>Tech:</b> Web App • SaaS</p>
+<p><b>Impact:</b> Scalable system</p>
 
 <a href="https://restaurant-os-3.vercel.app/" target="_blank">Live Demo</a>
 
-<p><b>Demo Access:</b><br>
-Email: demo@restaurantos.com<br>
-Password: demo123</p>
+<p><b>Demo:</b><br>
+demo@restaurantos.com<br>
+demo123</p>
 
 <p class="small">
-Demo environment uses simulated data. No real business information is accessible.
+Demo environment uses simulated data.
 </p>
 </div>
 
-<div class="card fade">
-<h3>Freelance Web Development</h3>
-
-<p>
-Developed websites for local restaurants and cafés.  
-Handled client interaction, requirement understanding, and delivery.
-Projects were not deployed due to client-side decisions.
-</p>
-
-<ul>
-<li><a href="https://the-litaz-house.vercel.app/">The Litaz House</a></li>
-<li><a href="https://amrut-cafe-nanded.vercel.app/">Amrut Cafe</a></li>
-<li><a href="https://0125-cafe-mystic-falls.vercel.app/">Cafe Mystic Falls</a></li>
-<li><a href="https://the-cafe-bucks.vercel.app/">The Cafe Bucks</a></li>
-</ul>
-
-<p><b>Impact:</b> Real-world client experience & business exposure</p>
-</div>
-
 <div class="section-line"></div>
 
-<h2>Skills</h2>
-<p>
-Communication • Acting • Web Development • Client Interaction • Problem Solving • AI Curiosity
-</p>
-
-<div class="section-line"></div>
-
-<h2>Achievements</h2>
-<p>
-• Performed 7 times portraying Chhatrapati Shivaji Maharaj<br>
-• Lead Actor in district-level drama competition<br>
-• Strong stage presence & leadership ability
-</p>
-
-<div class="section-line"></div>
-
-<h2>Why Me?</h2>
-<p>
-I don’t just learn — I build.<br>
-I don’t wait for opportunities — I create them.<br>
-Focused on execution, consistency, and real-world impact.
-</p>
-
-<div class="section-line"></div>
-
-<h2>Vision</h2>
-<p>
-Building at the intersection of AI, SaaS, and real-world problem solving.  
-This is just the beginning.
-</p>
-
-<div class="section-line"></div>
-
-<h2>Contact</h2>
-<p>Email: abhinavtapaskar@gmail.com</p>
-<p>Phone: 9527142284</p>
+<h2 id="contact">Let’s Build Something</h2>
+<p>If you're working on something interesting, let's connect.</p>
+<a class="btn" href="mailto:abhinavtapaskar@gmail.com">Contact Me</a>
 
 </div>
 
 <script>
+// CURSOR GLOW
+const glow = document.getElementById("cursorGlow");
+document.addEventListener("mousemove", (e) => {
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
+
+// SMOOTH ANIMATION
 const faders = document.querySelectorAll('.fade');
-window.addEventListener('scroll', () => {
-  faders.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 50){
-      el.classList.add('show');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
     }
   });
 });
+
+faders.forEach(el => observer.observe(el));
 </script>
 
 </body>
