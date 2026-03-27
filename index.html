@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhinav Tapaskar | Builder</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#0f0f0f,#1a1a1a);
+  color: white;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 42px;
+  text-shadow: 0 0 15px rgba(0,191,255,0.6);
+}
+
+h2 {
+  margin-top: 60px;
+  border-left: 4px solid #00bfff;
+  padding-left: 10px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,191,255,0.3);
+}
+
+a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.btn {
+  background: #00bfff;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.tag {
+  background: #00bfff;
+  color: black;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.7s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.small {
+  font-size: 12px;
+  opacity: 0.6;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Abhinav Tapaskar</h1>
+
+<p><b>I build AI products, SaaS systems & real-world solutions.</b></p>
+<p style="opacity:0.7;">17 y/o builder • Future AI + SaaS Founder</p>
+
+<a class="btn" href="#projects">Explore My Work</a>
+
+---
+
+<h2>About</h2>
+<p>
+Ambitious and self-driven student from Nanded, passionate about Artificial Intelligence, entrepreneurship, and engineering.  
+I focus on building real-world solutions—from SaaS systems to AI-based applications—and continuously improving through execution.
+</p>
+
+---
+
+<h2>Currently Building</h2>
+<p>
+• FaceGuard-AI2 → AI skincare assistant  
+• RestaurantOS-3 → SaaS for restaurant operations  
+• Exploring AI + SaaS business systems  
+</p>
+
+---
+
+<h2>Education</h2>
+<p>
+Late Digambarraoji Devde Junior College — Class 12 (PCM, Result Awaited)<br>
+Priyadarshini Vidyasankul — Class 10 (72%)
+</p>
+
+---
+
+<h2 id="projects">Projects</h2>
+
+<div class="card fade">
+<h3>FaceGuard-AI2 <span class="tag">Prototype</span></h3>
+
+<p><b>Problem:</b> People lack personalized skincare guidance</p>
+<p><b>Solution:</b> AI-powered skincare assistant</p>
+
+<a href="https://face-guard-ai-2.vercel.app/" target="_blank">View Project</a>
+<p class="small">Prototype stage • Demo available on request</p>
+</div>
+
+<div class="card fade">
+<h3>RestaurantOS-3</h3>
+
+<p><b>Problem:</b> Restaurants lack simple digital management systems</p>
+<p><b>Solution:</b> SaaS platform to streamline operations</p>
+
+<a href="https://restaurant-os-3.vercel.app/" target="_blank">Live Demo</a>
+
+<p><b>Demo Access:</b><br>
+Email: demo@restaurantos.com<br>
+Password: demo123</p>
+
+<p class="small">
+Demo environment uses simulated data. No real business information is accessible.
+</p>
+</div>
+
+<div class="card fade">
+<h3>Freelance Web Development</h3>
+
+<p>
+Developed websites for local restaurants and cafés.  
+Projects were not deployed due to client-side decisions.
+</p>
+
+<ul>
+<li><a href="https://the-litaz-house.vercel.app/">The Litaz House</a></li>
+<li><a href="https://amrut-cafe-nanded.vercel.app/">Amrut Cafe</a></li>
+<li><a href="https://0125-cafe-mystic-falls.vercel.app/">Cafe Mystic Falls</a></li>
+<li><a href="https://the-cafe-bucks.vercel.app/">The Cafe Bucks</a></li>
+</ul>
+</div>
+
+---
+
+<h2>Skills</h2>
+<p>
+Communication • Acting • Web Development • Client Interaction • Problem Solving • AI Curiosity
+</p>
+
+---
+
+<h2>Achievements</h2>
+<p>
+• Performed 7 times portraying Chhatrapati Shivaji Maharaj<br>
+• Lead Actor in district-level drama competition<br>
+• Strong stage presence & leadership ability
+</p>
+
+---
+
+<h2>Languages</h2>
+<p>English • Hindi • Marathi</p>
+
+---
+
+<h2>Vision</h2>
+<p>
+Building at the intersection of AI, SaaS, and real-world problem solving.  
+This is just the beginning.
+</p>
+
+---
+
+<h2>Contact</h2>
+<p>Email: abhinavtapaskar@gmail.com</p>
+<p>Phone: 9527142284</p>
+
+</div>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 50){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
